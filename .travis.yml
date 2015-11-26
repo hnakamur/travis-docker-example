@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+    - branch1
+
+install:
+  - docker build -t hnakamur/centos7 .
+
+script:
+  - docker run hnakamur/centos7 --entrypoint /usr/bin/uname -a
