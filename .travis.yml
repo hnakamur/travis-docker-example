@@ -12,4 +12,4 @@ install:
   - docker build -t hnakamur/centos7 .
 
 script:
-  - docker run hnakamur/centos7 --entrypoint /usr/bin/uname -a
+  - docker run --entrypoint /usr/bin/uname hnakamur/centos7 -a
