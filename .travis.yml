@@ -9,7 +9,8 @@ branches:
     - branch1
 
 install:
-  - docker build -t hnakamur/centos7 .
+  - docker build -t hnakamur/example .
 
 script:
-  - docker run --entrypoint /usr/bin/uname hnakamur/centos7 -a
+  - case $TRAVIS_BRANCH in master) project=project1;; branch1) project=project2;; esac
+  - docker run hnakamur/example $project

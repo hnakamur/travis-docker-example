@@ -1,3 +1,6 @@
 FROM centos:7
 
-CMD ["/bin/bash"]
+ADD run.sh /root/
+RUN chmod +x /root/run.sh
+
+ENTRYPOINT ["/root/run.sh"]
